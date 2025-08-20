@@ -29,6 +29,8 @@
     border: 1px solid blue;
 }
 
+
+
 /*SIDE-PANEL*/
 
 .side-panel {
@@ -70,6 +72,8 @@
 
 .books > * {
     border-radius: 10px;
+    max-width: 180px;
+    max-height: 180px;
     aspect-ratio: 1 / 1;
     background-color: lightblue;
 }
