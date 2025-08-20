@@ -43,6 +43,8 @@
     width: 100%;
     border-radius: 10px;
     border: 5px solid black;
+    position: sticky;
+    top: 40px;
 }
 
 /*MAIN BOOK SECTION*/
@@ -68,6 +70,7 @@
     place-items: stretch;
     gap: 5px;
     padding: 0px 15px;
+    place-items: stretch;
 }
 
 .books > * {
