@@ -8,6 +8,8 @@
     box-sizing: border-box;
 }
 
+/*CONTAINER*/
+
 .grid-container {
     display: grid;
     grid-template: 1fr 3fr / 1fr 3fr;
@@ -16,16 +18,40 @@
     border: 1px solid black;
 }
 
+/*HEADER*/
+
 .header {
     grid-column: 1 / span 2;
+    display: grid;
+    /* place-content: center; */
+    justify-items: center;
+    padding-top: 2em;
     background: linear-gradient(toright, blue, red);
     border: 1px solid blue;
 }
 
+/*SIDE-PANEL*/
+
 .side-panel {
     border: 1px solid red;
+    padding: 20px;
 }
+
+.panel {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    border: 5px solid black;
+}
+
+/*MAIN BOOK SECTION*/
 
 .main {
     border: 1px solid green;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+}
+
+.category {
+
 }
