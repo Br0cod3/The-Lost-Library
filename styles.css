@@ -137,11 +137,12 @@ h1 {
 
 .category {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    /* border: 2px solid navy; */
+    gap: 50px;
+    padding-bottom: 10px;
     background-color: var(--dark-blue);
-    color: white;
+    color: lightgray;
 }
 
 p[class^="section"] {
