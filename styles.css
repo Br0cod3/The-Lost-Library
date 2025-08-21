@@ -18,15 +18,37 @@
     border: 1px solid black;
 }
 
+
+
 /*HEADER*/
 
 .header {
     grid-column: 1 / span 2;
     display: grid;
-    justify-items: center;
-    padding: 1.8em;
+    place-items: center;
     background: linear-gradient(toright, blue, red);
     border: 1px solid blue;
+}
+
+.lib-intro {
+    line-height: 1.6;
+    display: grid;
+}
+
+.mythic {
+    justify-self: center;
+    line-height: 1.2;
+    display: grid;
+}
+
+.outro {
+    padding-top: 5px;
+    justify-self: end;
+    font-style: italic;
+}
+
+h1 {
+    font-size: 2.5rem;
 }
 
 
@@ -46,6 +68,8 @@
     position: sticky;
     top: 40px;
 }
+
+
 
 /*MAIN BOOK SECTION*/
 
@@ -69,8 +93,7 @@
     grid-template-columns: repeat(5, 1fr);
     place-items: stretch;
     gap: 5px;
-    padding: 0px 15px;
-    place-items: stretch;
+    padding: 0px 15px 20px;
 }
 
 .books > * {
