@@ -110,6 +110,8 @@ h1 {
     gap: 15px;
 }
 
+        /*SECTION*/
+
 .category {
     display: flex;
     justify-content: space-around;
@@ -117,6 +119,8 @@ h1 {
     border: 2px solid navy;
 }
 
+        /*BOOKS*/
+        
 .books {
     border: 1px solid red;
     display: grid;
