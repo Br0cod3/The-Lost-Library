@@ -119,8 +119,12 @@ h1 {
     border: 2px solid navy;
 }
 
+p[class^="section"] {
+    font-size: 1.5rem;
+}
+
         /*BOOKS*/
-        
+
 .books {
     border: 1px solid red;
     display: grid;
@@ -132,8 +136,8 @@ h1 {
 
 .books > * {
     border-radius: 10px;
-    max-width: auto;
-    max-height: auto;
+    max-width: 190px;
+    max-height: 190px;
     aspect-ratio: 1 / 1;
     background-color: lightblue;
 }
