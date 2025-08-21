@@ -1,178 +1,187 @@
 * {
-    margin: 0;
+  margin: 0;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /*GLOBAL CUSTOM PROPERTIES*/
 
 :root {
-    --dark-blue: #141726;
-    --side: #1D1F31;
+  --dark-blue: #141726;
+  --side: #1d1f31;
 }
-
 
 /*FONT-RULES*/
 
 @font-face {
-    font-family: "Radioactive";
-    src: url(fonts/IM_Fell/imfellenglish-regular-webfont.woff2) format("woff2"),
-         url(fonts/IM_Fell/imfellenglish-regular-webfont.woff) format("woff");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Radioactive";
+  src: url(fonts/IM_Fell/imfellenglish-regular-webfont.woff2) format("woff2"),
+    url(fonts/IM_Fell/imfellenglish-regular-webfont.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "Radioactive";
-    src: url(fonts/IM_Fell/imfellenglish-italic-webfont.woff2) format("woff2"),
-         url(fonts/IM_Fell/imfellenglish-italic-webfont.woff) format("woff");
-         font-weight: normal;
-         font-style: italic;
+  font-family: "Radioactive";
+  src: url(fonts/IM_Fell/imfellenglish-italic-webfont.woff2) format("woff2"),
+    url(fonts/IM_Fell/imfellenglish-italic-webfont.woff) format("woff");
+  font-weight: normal;
+  font-style: italic;
 }
 
 @font-face {
-    font-family: "Cinzel";
-    src: url(fonts/Cinzel/cinzel-variablefont_wght-webfont.woff2) format("woff2"),
-         url(fonts/Cinzel/cinzel-variablefont_wght-webfont.woff) format("woff");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Cinzel";
+  src: url(fonts/Cinzel/cinzel-variablefont_wght-webfont.woff2) format("woff2"),
+    url(fonts/Cinzel/cinzel-variablefont_wght-webfont.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "Almendra";
-    src: url(fonts/Almendra/almendrasc-regular-webfont.woff2) format("woff2"),
-         url(fonts/Almendra/almendrasc-regular-webfont.woff) format("woff");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Almendra";
+  src: url(fonts/Almendra/almendrasc-regular-webfont.woff2) format("woff2"),
+    url(fonts/Almendra/almendrasc-regular-webfont.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
-
 
 /*CONTAINER*/
 
 .grid-container {
-    display: grid;
-    grid-template: 1fr 4fr / 1fr 3fr;
-    width: 100%;
-    height: 100%;
-    border: 1px solid black;
+  display: grid;
+  grid-template: 1fr 4fr / 1fr 3fr;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
 }
-
-
 
 /*HEADER*/
 
 .header {
-    grid-column: 1 / span 2;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: var(--dark-blue);
-    color: white;
+  grid-column: 1 / span 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--dark-blue);
+  color: white;
 }
 
 .lib-intro {
-    line-height: 1.6;
-    display: grid;
+  line-height: 1.6;
+  display: grid;
 }
 
 .mythic {
-    justify-self: center;
-    line-height: 1.2;
-    display: grid;
-    font-family: "Radioactive", sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
-    font-weight: 600;
+  justify-self: center;
+  line-height: 1.2;
+  display: grid;
+  font-family: "Radioactive", sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue";
+  font-weight: 600;
 }
 
 .outro {
-    padding-top: 8px;
-    justify-self: end;
-    font-style: italic;
+  padding-top: 8px;
+  justify-self: end;
+  font-style: italic;
 }
 
 h1 {
-    font-family: "Cinzel";
-    font-size: 2.5rem;
+  font-family: "Cinzel";
+  font-size: 2.5rem;
 }
 
 .lantern {
-    width: 100px;
-    height: 210px;
-    filter: invert(1) brightness(0.5);
+  width: 100px;
+  height: 210px;
+  filter: invert(1) brightness(1.2);
 }
 
+svg path {
+  fill: #4b2e00; 
+  filter: drop-shadow(0 0 4px #ffa500aa) drop-shadow(0 0 10px #ffb84daa)
+    drop-shadow(0 0 20px #ff900033) drop-shadow(0 0 30px #ffae0055);
+  transition: filter 0.4s ease-in-out;
+}
+
+svg:hover path {
+  filter: drop-shadow(0 0 8px #ffc76dcc) drop-shadow(0 0 18px #ffbb4533)
+    drop-shadow(0 0 25px #ffbb4544) drop-shadow(0 0 40px #ffb94d77);
+}
 
 /*SIDE-PANEL*/
 
 .side-panel {
-    /* border: 1px solid red; */
-    padding: 45px 0px 20px 10px;
-    background-color: var(--dark-blue);
+  /* border: 1px solid red; */
+  padding: 45px 0px 20px 10px;
+  background-color: var(--dark-blue);
 }
 
 .panel {
-    height: 75%;
-    width: 100%;
-    border-radius: 10px;
-    background-color: white;
-    position: sticky;
-    top: 40px;
+  height: 75%;
+  width: 100%;
+  border-radius: 10px;
+  background-color: white;
+  position: sticky;
+  top: 40px;
 }
-
-
 
 /*MAIN BOOK SECTION*/
 
 .main {
-    /* border: 1px solid green; */
-    display: grid;
-    grid-template-rows: 45px 1fr;
-    /* gap: 15px; */
+  /* border: 1px solid green; */
+  display: grid;
+  grid-template-rows: 45px 1fr;
+  /* gap: 15px; */
 }
 
-        /*SECTION*/
+/*SECTION*/
 
 .category {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    padding-bottom: 10px;
-    background-color: var(--dark-blue);
-    color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding-bottom: 10px;
+  background-color: var(--dark-blue);
+  color: lightgray;
 }
 
 p[class^="section"] {
-    font-size: 1.5rem;
-    font-family: "Almendra", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 700;
+  font-size: 1.5rem;
+  font-family: "Almendra", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  font-weight: 700;
 }
 
-        /*BOOKS*/
+/*BOOKS*/
 
 .books {
-    /* border: 1px solid red; */
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    place-items: stretch;
-    gap: 12px;
-    padding: 0px 15px 20px;
-    grid-auto-rows: 190px;
-    background-color: var(--dark-blue);
+  /* border: 1px solid red; */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  place-items: stretch;
+  gap: 12px;
+  padding: 0px 15px 20px;
+  grid-auto-rows: 190px;
+  background-color: var(--dark-blue);
 }
 
 .books > * {
-    border-radius: 10px;
-    max-width: 190px;
-    max-height: 190px;
-    aspect-ratio: 1 / 1;
-    background-color: white;
+  border-radius: 10px;
+  max-width: 190px;
+  max-height: 190px;
+  aspect-ratio: 1 / 1;
+  background-color: white;
 }
 
 .add-book {
-    background: linear-gradient(145deg, blue, red);
-    order: 2;
+  background: linear-gradient(145deg, blue, red);
+  order: 2;
 }
