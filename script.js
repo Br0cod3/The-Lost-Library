@@ -10,7 +10,7 @@ const Manuscripts = []
 
 const Library = [Grimoire, Tomes, Scrolls, Tablets, Chronicles, Manuscripts]
 
-function Book(title, author, numberOfPages, id) {
+function Book(title, author, numberOfPages) {
     this.title = title;
     this.author = author;
     this.numberOfPages = numberOfPages;
@@ -48,5 +48,32 @@ function addBookToLibrary(title, author, numberOfPages) {
 
 }
 
-addBookToLibrary("The philosopher's stone", "J.K. Rowling", "800")
-console.log(Grimoire)
+addBookToLibrary("Harry Potter and the Philosopher's stone", "J.K. Rowling", 352)
+addBookToLibrary("The Lord of the Rings", "J.R.R. Tolkien", 1216)
+
+librarySection = "Tomes"
+addBookToLibrary("The Mahabharata", "Vyasa", 2400)
+addBookToLibrary("Infinite Jest", "David Foster Wallace", 1079)
+
+librarySection = "Scrolls"
+addBookToLibrary("The Dead Sea Scrolls", "Various Essene scribes", 972)
+addBookToLibrary("The Great Isaiah Scroll", "Hebrew scribe", 54)
+
+librarySection = "Tablets"
+addBookToLibrary("The Ten Commandments", "Sky Daddy", 1)
+addBookToLibrary("Epic of Gilgamesh", "Sumerian scribes", 12)
+
+librarySection = "Chronicles"
+addBookToLibrary("Anglo-Saxon Chronicle", "Various monastic scribes", 300)
+addBookToLibrary("Chronicles of Narnia", "C.S. Lewis", 767)
+
+librarySection = "Manuscripts"
+addBookToLibrary("Voynich Manuscript", "Unknown", 240)
+addBookToLibrary("Codex Gigas", "Herman the Recluse", 620)
+
+librarySection = "Grimoire"
+
+for (book of Library) {
+    console.log(book)
+}
+
