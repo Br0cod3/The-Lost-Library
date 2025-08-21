@@ -8,6 +8,13 @@
     box-sizing: border-box;
 }
 
+/*GLOBAL CUSTOM PROPERTIES*/
+
+:root {
+    --dark-blue: #141726;
+}
+
+
 /*FONT-RULES*/
 
 @font-face {
@@ -59,10 +66,11 @@
 
 .header {
     grid-column: 1 / span 2;
-    display: grid;
-    place-items: center;
-    background: linear-gradient(toright, blue, red);
-    border: 1px solid blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--dark-blue);
+    color: white;
 }
 
 .lib-intro {
@@ -89,6 +97,11 @@ h1 {
     font-size: 2.5rem;
 }
 
+.lantern {
+    width: 100px;
+    height: 210px;
+    filter: invert(1) brightness(0.5);
+}
 
 
 /*SIDE-PANEL*/
