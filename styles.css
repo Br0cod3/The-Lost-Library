@@ -104,14 +104,14 @@ h1 {
   filter: invert(1) brightness(1.2);
 }
 
-svg path {
+.lantern path {
   fill: #4b2e00; 
   filter: drop-shadow(0 0 4px #ffa500aa) drop-shadow(0 0 10px #ffb84daa)
     drop-shadow(0 0 20px #ff900033) drop-shadow(0 0 30px #ffae0055);
   transition: filter 0.4s ease-in-out;
 }
 
-svg:hover path {
+.lantern:hover path {
   filter: drop-shadow(0 0 8px #ffc76dcc) drop-shadow(0 0 18px #ffbb4533)
     drop-shadow(0 0 25px #ffbb4544) drop-shadow(0 0 40px #ffb94d77);
 }
@@ -184,4 +184,18 @@ p[class^="section"] {
 
 .add-book {
   order: 2;
+  border: none;
+  background: none;
+  display: grid;
+  place-content: center;
+}
+
+.add-book:hover {
+    background-color: var(--book-background);
+}
+
+.plus {
+    width: 150px;
+    height: 150px;
+    filter: invert(1) brightness(0.8);
 }
