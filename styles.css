@@ -128,7 +128,7 @@ svg:hover path {
   height: 75%;
   width: 100%;
   border-radius: 10px;
-  background-color: white;
+  background: url(images/leonardo-yip-BjyR9nSIJko-unsplash.jpg) center / cover no-repeat;
   position: sticky;
   top: 40px;
 }
