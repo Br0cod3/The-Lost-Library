@@ -12,6 +12,7 @@
 
 :root {
     --dark-blue: #141726;
+    --side: #1D1F31;
 }
 
 
@@ -107,15 +108,16 @@ h1 {
 /*SIDE-PANEL*/
 
 .side-panel {
-    border: 1px solid red;
-    padding: 60px 10px 20px 10px;
+    /* border: 1px solid red; */
+    padding: 45px 10px 20px 10px;
+    background-color: var(--dark-blue);
 }
 
 .panel {
     height: 75%;
     width: 100%;
     border-radius: 10px;
-    border: 5px solid black;
+    background-color: white;
     position: sticky;
     top: 40px;
 }
@@ -125,10 +127,10 @@ h1 {
 /*MAIN BOOK SECTION*/
 
 .main {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     display: grid;
     grid-template-rows: 45px 1fr;
-    gap: 15px;
+    /* gap: 15px; */
 }
 
         /*SECTION*/
@@ -137,7 +139,9 @@ h1 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 2px solid navy;
+    /* border: 2px solid navy; */
+    background-color: var(--dark-blue);
+    color: white;
 }
 
 p[class^="section"] {
@@ -149,12 +153,13 @@ p[class^="section"] {
         /*BOOKS*/
 
 .books {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     place-items: stretch;
     gap: 5px;
     padding: 0px 15px 20px;
+    background-color: var(--dark-blue);
 }
 
 .books > * {
@@ -162,7 +167,7 @@ p[class^="section"] {
     max-width: 190px;
     max-height: 190px;
     aspect-ratio: 1 / 1;
-    background-color: lightblue;
+    background-color: white;
 }
 
 .add-book {
