@@ -183,6 +183,5 @@ p[class^="section"] {
 }
 
 .add-book {
-  background: linear-gradient(145deg, blue, red);
   order: 2;
 }
