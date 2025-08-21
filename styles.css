@@ -109,7 +109,7 @@ h1 {
 
 .side-panel {
     /* border: 1px solid red; */
-    padding: 45px 10px 20px 10px;
+    padding: 45px 0px 20px 10px;
     background-color: var(--dark-blue);
 }
 
@@ -158,8 +158,9 @@ p[class^="section"] {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     place-items: stretch;
-    gap: 5px;
+    gap: 12px;
     padding: 0px 15px 20px;
+    grid-auto-rows: 190px;
     background-color: var(--dark-blue);
 }
 
