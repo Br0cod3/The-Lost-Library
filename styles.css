@@ -13,6 +13,8 @@
 :root {
   --dark-blue: #141726;
   --side: #1d1f31;
+  --book-border: #f0f0f0;
+  --book-background: rgba(215, 201, 201, 0.4);
 }
 
 /*FONT-RULES*/
@@ -134,10 +136,8 @@ svg:hover path {
 /*MAIN BOOK SECTION*/
 
 .main {
-  /* border: 1px solid green; */
   display: grid;
   grid-template-rows: 45px 1fr;
-  /* gap: 15px; */
 }
 
 /*SECTION*/
@@ -178,7 +178,8 @@ p[class^="section"] {
   max-width: 190px;
   max-height: 190px;
   aspect-ratio: 1 / 1;
-  background-color: white;
+  background-color: var(--book-background);
+  border: 2px solid var(--book-border);
 }
 
 .add-book {
