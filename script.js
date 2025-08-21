@@ -10,10 +10,11 @@ const Manuscripts = []
 
 const Library = [Grimoire, Tomes, Scrolls, Tablets, Chronicles, Manuscripts]
 
-function Book(title, author, numberOfPages) {
+function Book(title, author, numberOfPages, id) {
     this.title = title;
     this.author = author;
     this.numberOfPages = numberOfPages;
+    this.id = crypto.randomUUID()
 }
 
 function addBookToLibrary(title, author, numberOfPages) {
@@ -48,3 +49,4 @@ function addBookToLibrary(title, author, numberOfPages) {
 }
 
 addBookToLibrary("The philosopher's stone", "J.K. Rowling", "800")
+console.log(Grimoire)
