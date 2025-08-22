@@ -133,6 +133,13 @@ h1 {
   top: 30px;
 }
 
+#oni {
+  width: 65px;
+  height: 65px;
+  filter: invert(1);
+}
+
+
 /*MAIN BOOK SECTION*/
 
 .main {
