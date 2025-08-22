@@ -288,12 +288,14 @@ p[class^="section"]:hover {
   position: relative;
   filter: brightness(0.9);
   animation: floatUp 0.2s ease forwards;
+  transform: rotate(2deg);
 }
 
 .lib-sec {
   position: relative;
   text-shadow: 0 0 4px #005affaa, 0 0 10px #0047b2aa, 0 0 20px #006fff33, 0 0 30px #0051ff55;
   bottom: 5px;
+  transform: rotate(2deg);
 }
 
 .fall {
