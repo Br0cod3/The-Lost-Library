@@ -73,8 +73,10 @@ function renderShelf() {
         buttons.classList.add("buttons")
         const btn1 = document.createElement("button")
         btn1.classList.add("read-status")
+        btn1.textContent = "READ"
         const btn2 = document.createElement("button")
         btn2.classList.add("remove")
+        btn2.textContent = "REMOVE"
         buttons.append(btn1, btn2)
 
         archive.append(pic, about, buttons)
