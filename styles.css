@@ -345,6 +345,8 @@ p[class^="section"]:hover {
   justify-items: center;
 }
 
+/*DYNAMIC BOOKS*/
+
 .book > img {
   width: 120px;
   height: 75px;
@@ -352,12 +354,22 @@ p[class^="section"]:hover {
   margin-top: 8px;
 }
 
-/*DYNAMIC BOOKS*/
-
 .books img + div {
   display: grid;
   justify-items: center;
   padding: 0px 8px 0px;
+}
+
+.books button {
+  height: 2em;
+  width: 6em;
+  border-radius: 6px;
+  border: none;
+}
+
+.buttons {
+  display: flex;
+  gap: 6px;
 }
 
 .add-book {
