@@ -1,6 +1,5 @@
 
 let librarySection;
-let bookProperties = ["title", "author", "numberOfPages"]
 const addBook = document.querySelector(".add-book")
 const cancel = document.querySelector(".cancel")
 const form = document.getElementById("side-form")
@@ -26,6 +25,10 @@ const Library = {
 const imageMap = {
     Grimoire: "./images/grimoire.jpg",
     Tomes: "./images/tomes.jpg",
+    Scrolls: "./images/scroll.jpg",
+    Tablets: "./images/tablet.jpg",
+    Chronicles: "./images/chronicles.jpg",
+    Manuscripts: "./images/manuscript.jpg",
 }
 
 function Book(title, author, numberOfPages) {
@@ -67,8 +70,11 @@ function renderShelf() {
         pic.alt = librarySection
 
         const buttons = document.createElement("div")
+        buttons.classList.add("buttons")
         const btn1 = document.createElement("button")
+        btn1.classList.add("read-status")
         const btn2 = document.createElement("button")
+        btn2.classList.add("remove")
         buttons.append(btn1, btn2)
 
         archive.append(pic, about, buttons)
