@@ -10,6 +10,14 @@ const sections = document.querySelectorAll("p[class^='section']")
 
 sections.forEach(section => {
     section.addEventListener("click", ()=> {
+        sections.forEach(category => {
+            if (category.classList.contains("lib-sec")) {
+                category.classList.remove("lib-sec")
+                category.classList.add("fall")
+            }
+        })
+        section.classList.remove("fall")
+        section.classList.add("lib-sec")
         librarySection = section.textContent
     })
 })
