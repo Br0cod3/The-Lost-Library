@@ -1,5 +1,6 @@
 
 let librarySection;
+let bookProperties = ["title", "author", "numberOfPages"]
 const addBook = document.querySelector(".add-book")
 const cancel = document.querySelector(".cancel")
 const form = document.getElementById("side-form")
@@ -20,6 +21,11 @@ const Library = {
     "Tablets": Tablets,
     "Chronicles": Chronicles,
     "Manuscripts": Manuscripts
+}
+
+const imageMap = {
+    Grimoire: "./images/grimoire.jpg",
+    Tomes: "./images/tomes.jpg",
 }
 
 function Book(title, author, numberOfPages) {
@@ -43,9 +49,29 @@ function renderShelf() {
     shelf.querySelectorAll(".book:not(.add-book)").forEach(book => book.remove())
 
     const books = Library[librarySection];
-    for (const book of books) {
+    for (const book of books) {   
         const archive = document.createElement("div")
         archive.classList.add("book", librarySection)
+
+        const about = document.createElement("div")
+        const phrase = document.createElement("p")
+        const phrase2 = document.createElement("p")
+        const phrase3 = document.createElement("p")
+        phrase.textContent = `${book.title}`
+        phrase2.textContent = `${book.author}`
+        phrase3.textContent = `${book.numberOfPages}`
+        about.append(phrase, phrase2, phrase3)
+
+        const pic = document.createElement("img")
+        pic.src = imageMap[librarySection]
+        pic.alt = librarySection
+
+        const buttons = document.createElement("div")
+        const btn1 = document.createElement("button")
+        const btn2 = document.createElement("button")
+        buttons.append(btn1, btn2)
+
+        archive.append(pic, about, buttons)
         shelf.appendChild(archive)
     }
 }
@@ -73,7 +99,7 @@ addBookToLibrary("Voynich Manuscript", "Unknown", 240)
 addBookToLibrary("Codex Gigas", "Herman the Recluse", 620)
 
 librarySection = "Grimoire"
-addBookToLibrary("Harry Potter and the Philosopher's stone", "J.K. Rowling", 352)
+addBookToLibrary("The Philosopher's stone", "J.K. Rowling", 352)
 addBookToLibrary("The Lord of the Rings", "J.R.R. Tolkien", 1216)
 
 //SECTION
