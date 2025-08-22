@@ -1,8 +1,26 @@
 
-let librarySection = "Grimoire";
+let librarySection;
 const addBook = document.querySelector(".add-book")
 const cancel = document.querySelector(".cancel")
 const form = document.getElementById("side-form")
+
+//SECTION ARRAYS
+const Grimoire = []
+const Tomes = []
+const Scrolls = []
+const Tablets = []
+const Chronicles = []
+const Manuscripts = []
+
+
+const Library = {
+    "Grimoire": Grimoire,
+    "Tomes": Tomes,
+    "Scrolls": Scrolls,
+    "Tablets": Tablets,
+    "Chronicles": Chronicles,
+    "Manuscripts": Manuscripts
+}
 
 //SECTION
 
@@ -22,16 +40,6 @@ sections.forEach(section => {
     })
 })
 
-//SECTION ARRAYS
-const Grimoire = []
-const Tomes = []
-const Scrolls = []
-const Tablets = []
-const Chronicles = []
-const Manuscripts = []
-
-const Library = [Grimoire, Tomes, Scrolls, Tablets, Chronicles, Manuscripts]
-
 function Book(title, author, numberOfPages) {
     this.title = title;
     this.author = author;
@@ -42,34 +50,13 @@ function Book(title, author, numberOfPages) {
 function addBookToLibrary(title, author, numberOfPages) {
     const book = new Book(title, author, numberOfPages);
     
-    switch (librarySection) {
-        case "Tomes":
-            Tomes.push(book)
-            break;
-        
-        case "Scrolls":
-            Scrolls.push(book)
-            break;
-
-        case "Tablets":
-            Tablets.push(book);
-            break;
-
-        case "Chronicles":
-            Chronicles.push(book)
-            break;
-
-        case "Manuscripts":
-            Manuscripts.push(book)
-            break;
-    
-        default:
-            Grimoire.push(book)
-            break;
+    const rack = Library[librarySection]
+    if (rack) {
+        rack.push(book)
     }
-
 }
 
+librarySection = "Grimoire"
 addBookToLibrary("Harry Potter and the Philosopher's stone", "J.K. Rowling", 352)
 addBookToLibrary("The Lord of the Rings", "J.R.R. Tolkien", 1216)
 
@@ -93,8 +80,6 @@ librarySection = "Manuscripts"
 addBookToLibrary("Voynich Manuscript", "Unknown", 240)
 addBookToLibrary("Codex Gigas", "Herman the Recluse", 620)
 
-librarySection = "Grimoire"
-
 addBook.addEventListener("click", ()=> {
     if (form.classList.contains("fade-out")) {
         form.classList.remove("fade-out")
@@ -109,3 +94,10 @@ cancel.addEventListener("click", () => {
     form.classList.remove("fade-in")
     form.classList.add("hidden")
 })
+
+// BOOKS
+
+// const shelf = document.querySelector(".books")
+// for (const books of librarySection) {
+//     shelf.appendChild(books)
+// }
