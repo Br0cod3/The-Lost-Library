@@ -215,6 +215,13 @@ input:focus {
   box-shadow: 0 0 4px #005affaa, 0 0 10px #0047b2aa, 0 0 20px #006fff33, 0 0 30px #0051ff55;
 }
 
+    /*FORM VISIBILITY*/
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
 
 /*MAIN BOOK SECTION*/
 
