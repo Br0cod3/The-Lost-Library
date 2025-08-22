@@ -357,7 +357,8 @@ p[class^="section"]:hover {
 .books img + div {
   display: grid;
   justify-items: center;
-  padding: 0px 8px 0px;
+  padding: 0px 8px 2px;
+  line-height: 0.85;
 }
 
 .books button {
@@ -365,11 +366,19 @@ p[class^="section"]:hover {
   width: 6em;
   border-radius: 6px;
   border: none;
+  box-shadow: 0 0 4px #ffa500aa, 0 0 10px #ffb84daa, 0 0 20px #ff900033, 0 0 30px #ffae0055;
+  color: gray;
 }
 
 .buttons {
   display: flex;
   gap: 6px;
+}
+
+.books p {
+  color: white;
+  font-family: "Radioactive";
+  text-shadow: 0 0 4px #005affaa, 0 0 10px #0047b2aa, 0 0 20px #006fff33, 0 0 30px #0051ff55;
 }
 
 .add-book {
