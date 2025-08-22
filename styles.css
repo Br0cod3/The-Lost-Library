@@ -339,10 +339,10 @@ p[class^="section"]:hover {
   max-width: 190px;
   max-height: 190px;
   aspect-ratio: 1 / 1;
-  background-color: var(--book-background);
-  border: 2px solid var(--book-border);
+  background: none;
   display: grid;
   justify-items: center;
+  position: relative;
 }
 
 /*DYNAMIC BOOKS*/
@@ -368,6 +368,14 @@ p[class^="section"]:hover {
   border: none;
   box-shadow: 0 0 4px #ffa500aa, 0 0 10px #ffb84daa, 0 0 20px #ff900033, 0 0 30px #ffae0055;
   color: gray;
+  font-family: "Cinzel", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.book:hover {
+  border: 2px solid var(--book-border);
+  animation: floatUp 0.4s ease forwards;
 }
 
 .buttons {
