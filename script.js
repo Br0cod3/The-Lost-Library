@@ -1,9 +1,20 @@
 
-let librarySection;
+let librarySection = "Grimoire";
 const addBook = document.querySelector(".add-book")
 const cancel = document.querySelector(".cancel")
 const form = document.getElementById("side-form")
 
+//SECTION
+
+const sections = document.querySelectorAll("p[class^='section']")
+
+sections.forEach(section => {
+    section.addEventListener("click", ()=> {
+        librarySection = section.textContent
+    })
+})
+
+//SECTION ARRAYS
 const Grimoire = []
 const Tomes = []
 const Scrolls = []
