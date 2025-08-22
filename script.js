@@ -1,5 +1,8 @@
 
 let librarySection;
+const addBook = document.querySelector(".add-book")
+const cancel = document.querySelector(".cancel")
+const form = document.getElementById("side-form")
 
 const Grimoire = []
 const Tomes = []
@@ -73,7 +76,17 @@ addBookToLibrary("Codex Gigas", "Herman the Recluse", 620)
 
 librarySection = "Grimoire"
 
-for (book of Library) {
-    console.log(book)
-}
+addBook.addEventListener("click", ()=> {
+    if (form.classList.contains("fade-out")) {
+        form.classList.remove("fade-out")
+    }
+    form.classList.remove("hidden")
+    void form.offsetWidth
+    form.classList.add("fade-in")
+})
 
+cancel.addEventListener("click", () => {
+    form.classList.add("fade-out")
+    form.classList.remove("fade-in")
+    form.classList.add("hidden")
+})
