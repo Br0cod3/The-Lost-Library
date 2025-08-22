@@ -15,6 +15,7 @@
   --side: #1d1f31;
   --book-border: #f0f0f0;
   --book-background: rgba(215, 201, 201, 0.4);
+  --label: rgba(0, 90, 255, 0.3);
 }
 
 /*FONT-RULES*/
@@ -139,6 +140,10 @@ h1 {
   height: 65px;
   filter: invert(0.7) brightness();
   justify-self: center;
+    filter: drop-shadow(0 0 4px #ffa500aa) drop-shadow(0 0 10px #ffb84daa)
+    drop-shadow(0 0 20px #ff900033) drop-shadow(0 0 30px #ffae0055);
+  transition: filter 0.4s ease-in-out;
+  
 }
 
 #side-form {
@@ -151,11 +156,17 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2em;
+  gap: 1.8em;
 }
 
 .wrap {
   display: grid;
+  gap: 5px;
+}
+
+.complete {
+  display: flex;
+  gap: 5px;
 }
 
 .cover {
@@ -164,15 +175,38 @@ h1 {
 }
 
 label {
-  color: white;
+  color: rgba(250, 250, 250, 0.8);
+  text-shadow: 0 0 4px #ffa500aa, 0 0 10px #ffb84daa, 0 0 20px #ff900033, 0 0 30px #ffae0055;
   font-size: 1.2em;
+  font-family: "Radioactive", sans-serif;
 }
 
 .btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1em;
+  gap: 1.2em;
+}
+
+form button {
+  height: 2rem;
+  width: 5.5rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0 4px #ffa500aa, 0 0 10px #ffb84daa, 0 0 20px #ff900033, 0 0 30px #ffae0055;
+  font-family: "Cinzel", sans-serif;
+  font-weight: 800;
+  color: gray;
+}
+
+input {
+  border-radius: 6px;
+  border: none;
+  height: 1.5rem;
+  padding-left: 5px;
+  font-family: "Radioactive", sans-serif;
+  font-weight: 900;
+  outline: none;
 }
 
 
