@@ -22,24 +22,6 @@ const Library = {
     "Manuscripts": Manuscripts
 }
 
-//SECTION
-
-const sections = document.querySelectorAll("p[class^='section']")
-
-sections.forEach(section => {
-    section.addEventListener("click", ()=> {
-        sections.forEach(category => {
-            if (category.classList.contains("lib-sec")) {
-                category.classList.remove("lib-sec")
-                category.classList.add("fall")
-            }
-        })
-        section.classList.remove("fall")
-        section.classList.add("lib-sec")
-        librarySection = section.textContent
-    })
-})
-
 function Book(title, author, numberOfPages) {
     this.title = title;
     this.author = author;
@@ -56,9 +38,19 @@ function addBookToLibrary(title, author, numberOfPages) {
     }
 }
 
-librarySection = "Grimoire"
-addBookToLibrary("Harry Potter and the Philosopher's stone", "J.K. Rowling", 352)
-addBookToLibrary("The Lord of the Rings", "J.R.R. Tolkien", 1216)
+function renderShelf() {
+    const shelf = document.querySelector(".books")
+    shelf.querySelectorAll(".book:not(.add-book)").forEach(book => book.remove())
+
+    const books = Library[librarySection];
+    for (const book of books) {
+        const archive = document.createElement("div")
+        archive.classList.add("book", librarySection)
+        shelf.appendChild(archive)
+    }
+}
+
+//MANUAL BOOKS
 
 librarySection = "Tomes"
 addBookToLibrary("The Mahabharata", "Vyasa", 2400)
@@ -80,6 +72,29 @@ librarySection = "Manuscripts"
 addBookToLibrary("Voynich Manuscript", "Unknown", 240)
 addBookToLibrary("Codex Gigas", "Herman the Recluse", 620)
 
+librarySection = "Grimoire"
+addBookToLibrary("Harry Potter and the Philosopher's stone", "J.K. Rowling", 352)
+addBookToLibrary("The Lord of the Rings", "J.R.R. Tolkien", 1216)
+
+//SECTION
+
+const sections = document.querySelectorAll("p[class^='section']")
+
+sections.forEach(section => {
+    section.addEventListener("click", ()=> {
+        sections.forEach(category => {
+            if (category.classList.contains("lib-sec")) {
+                category.classList.remove("lib-sec")
+                category.classList.add("fall")
+            }
+        })
+        section.classList.remove("fall")
+        section.classList.add("lib-sec")
+        librarySection = section.textContent
+        renderShelf()
+    })
+})
+
 addBook.addEventListener("click", ()=> {
     if (form.classList.contains("fade-out")) {
         form.classList.remove("fade-out")
@@ -95,9 +110,4 @@ cancel.addEventListener("click", () => {
     form.classList.add("hidden")
 })
 
-// BOOKS
-
-// const shelf = document.querySelector(".books")
-// for (const books of librarySection) {
-//     shelf.appendChild(books)
-// }
+renderShelf()
