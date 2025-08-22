@@ -341,6 +341,23 @@ p[class^="section"]:hover {
   aspect-ratio: 1 / 1;
   background-color: var(--book-background);
   border: 2px solid var(--book-border);
+  display: grid;
+  justify-items: center;
+}
+
+.book > img {
+  width: 120px;
+  height: 75px;
+  border-radius: 5px;
+  margin-top: 8px;
+}
+
+/*DYNAMIC BOOKS*/
+
+.books img + div {
+  display: grid;
+  justify-items: center;
+  padding: 0px 8px 0px;
 }
 
 .add-book {
