@@ -131,12 +131,48 @@ h1 {
   background: url(images/leonardo-yip-BjyR9nSIJko-unsplash.jpg) center / cover no-repeat;
   position: sticky;
   top: 30px;
+  padding: 40px 20px 40px;
 }
 
 #oni {
   width: 65px;
   height: 65px;
-  filter: invert(1);
+  filter: invert(0.7) brightness();
+  justify-self: center;
+}
+
+#side-form {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2em;
+}
+
+.wrap {
+  display: grid;
+}
+
+.cover {
+  display: flex;
+  justify-content: center;
+}
+
+label {
+  color: white;
+  font-size: 1.2em;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
 }
 
 
