@@ -169,6 +169,10 @@ h1 {
   gap: 5px;
 }
 
+#completed:focus {
+  box-shadow: none;
+}
+
 .cover {
   display: flex;
   justify-content: center;
