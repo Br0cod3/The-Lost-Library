@@ -40,15 +40,21 @@ const imageMap = {
     Manuscripts: "./images/manuscript.jpg",
 }
 
-function Book(title, author, numberOfPages) {
+function Book(title, author, numberOfPages, readStatus = "UNREAD") {
     this.title = title;
     this.author = author;
     this.numberOfPages = numberOfPages;
     this.id = crypto.randomUUID()
+    this.readStatus = readStatus
 }
 
-function addBookToLibrary(title, author, numberOfPages) {
-    const book = new Book(title, author, numberOfPages);
+Book.prototype.toggle = function() {
+    const status = this.readStatus
+    status === "READ" ? status = "UNREAD" : status = "READ" 
+}
+
+function addBookToLibrary(title, author, numberOfPages, readStatus) {
+    const book = new Book(title, author, numberOfPages, readStatus);
     
     const rack = Library[librarySection]
     if (rack) {
@@ -91,7 +97,7 @@ function renderShelf() {
         buttons.classList.add("buttons")
         const btn1 = document.createElement("button")
         // btn1.classList.add("read-status")
-        read.checked ? btn1.textContent = "READ" : btn1.textContent = "UNREAD"
+        btn1.textContent = book.readStatus
         const btn2 = document.createElement("button")
         btn2.classList.add("remove")
         btn2.textContent = "REMOVE"
@@ -168,11 +174,9 @@ cancel.addEventListener("click", () => {
 submit.addEventListener("click", (e) => {
     e.preventDefault()
     if (title.value && author.value && pages.value) {
-        addBookToLibrary(title.value, author.value, parseInt(pages.value))
+        read.checked ? addBookToLibrary(title.value, author.value, parseInt(pages.value), "READ") : addBookToLibrary(title.value, author.value, parseInt(pages.value))
         renderShelf()
     }
 })
 
 renderShelf()
-
-// BOOK BUTTONS
