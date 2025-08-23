@@ -67,7 +67,16 @@ function removeBtn(e) {
     const bookID = btn.dataset.bookId
     const exterminate = document.querySelector(`.book[data-book-id = "${bookID}"]`)
     exterminate.remove()
-    Library[librarySection].pop(exterminate)
+    const rack = Library[librarySection]
+    const index = rack.findIndex(book => book.id === bookID);
+    if (index !== -1) {
+        rack.splice(index, 1)
+    }
+}
+
+function bookState(e) {
+    const state = e.currentTarget
+    
 }
 
 function renderShelf() {
@@ -96,8 +105,8 @@ function renderShelf() {
         const buttons = document.createElement("div")
         buttons.classList.add("buttons")
         const btn1 = document.createElement("button")
-        // btn1.classList.add("read-status")
         btn1.textContent = book.readStatus
+        btn1.addEventListener("click", bookState)
         const btn2 = document.createElement("button")
         btn2.classList.add("remove")
         btn2.textContent = "REMOVE"
