@@ -407,6 +407,7 @@ button.UNREAD {
   border: none;
   background: none;
   display: grid;
+  grid-template-rows: 1fr 2fr;
   place-content: center;
 }
 
@@ -419,4 +420,11 @@ button.UNREAD {
     width: 150px;
     height: 150px;
     filter: invert(1) brightness(0.8);
+}
+
+#shelf {
+  align-self: end;
+  font-size: 1.3rem;
+  font-style: italic;
+  box-shadow: none;
 }
