@@ -190,6 +190,9 @@ cancel.addEventListener("click", () => {
 submit.addEventListener("click", (e) => {
     e.preventDefault()
     if (title.value && author.value && pages.value) {
+        if (parseInt(pages.value) > 5) {
+            pages.value = pages.value.slice(0, 5)
+        }
         read.checked ? addBookToLibrary(title.value, author.value, parseInt(pages.value), "READ") : addBookToLibrary(title.value, author.value, parseInt(pages.value))
         renderShelf()
     }
