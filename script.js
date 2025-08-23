@@ -8,6 +8,10 @@ const addBook = document.querySelector(".add-book")
 const cancel = document.querySelector(".cancel")
 const form = document.getElementById("side-form")
 const submit = document.querySelector(".submit")
+const title = document.getElementById("title")
+const author = document.getElementById("author")
+const pages = document.getElementById("numberOfPages")
+const read = document.getElementById("completed")
 
 //SECTION ARRAYS
 const Grimoire = []
@@ -87,6 +91,7 @@ function renderShelf() {
         archive.append(pic, about, buttons)
         shelf.appendChild(archive)
     }
+    form.reset()
 }
 
 //MANUAL BOOKS
@@ -151,6 +156,10 @@ cancel.addEventListener("click", () => {
 
 submit.addEventListener("click", (e) => {
     e.preventDefault()
+    if (title.value && author.value && pages.value) {
+        addBookToLibrary(title.value, author.value, parseInt(pages.value))
+        renderShelf()
+    }
 })
 
 renderShelf()
