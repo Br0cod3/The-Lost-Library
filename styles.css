@@ -300,7 +300,7 @@ p[class^="section"]:hover {
 
 .fall {
   position: relative;
-  animation: floatDown 0.2s ease backwards;
+  animation: floatDown 0.3s ease backwards;
 }
 
 @keyframes floatUp {
