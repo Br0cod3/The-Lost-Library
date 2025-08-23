@@ -56,6 +56,14 @@ function addBookToLibrary(title, author, numberOfPages) {
     }
 }
 
+function removeBtn(e) {
+    const btn = e.currentTarget
+    const bookID = btn.dataset.bookId
+    const exterminate = document.querySelector(`.book[data-book-id = "${bookID}"]`)
+    exterminate.remove()
+    Library[librarySection].pop(exterminate)
+}
+
 function renderShelf() {
     const shelf = document.querySelector(".books")
     shelf.querySelectorAll(".book:not(.add-book)").forEach(book => book.remove())
@@ -64,6 +72,7 @@ function renderShelf() {
     for (const book of books) {   
         const archive = document.createElement("div")
         archive.classList.add("book", librarySection)
+        archive.setAttribute("data-book-id", book.id)
 
         const about = document.createElement("div")
         const phrase = document.createElement("p")
@@ -86,6 +95,8 @@ function renderShelf() {
         const btn2 = document.createElement("button")
         btn2.classList.add("remove")
         btn2.textContent = "REMOVE"
+        btn2.setAttribute("data-book-id", book.id)
+        btn2.addEventListener("click", removeBtn)
         buttons.append(btn1, btn2)
 
         archive.append(pic, about, buttons)
@@ -163,3 +174,5 @@ submit.addEventListener("click", (e) => {
 })
 
 renderShelf()
+
+// BOOK BUTTONS
