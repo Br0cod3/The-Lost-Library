@@ -49,8 +49,7 @@ function Book(title, author, numberOfPages, readStatus = "UNREAD") {
 }
 
 Book.prototype.toggle = function() {
-    const status = this.readStatus
-    status === "READ" ? status = "UNREAD" : status = "READ" 
+    this.readStatus = this.readStatus === "READ" ? "UNREAD" : "READ"
 }
 
 function addBookToLibrary(title, author, numberOfPages, readStatus) {
@@ -75,8 +74,14 @@ function removeBtn(e) {
 }
 
 function bookState(e) {
-    const state = e.currentTarget
-    
+    const button = e.currentTarget
+    const bookID = button.dataset.bookId
+    const rack = Library[librarySection]
+    const index = rack.findIndex(book => book.id === bookID)
+    if (index !== -1) {
+        rack[index].toggle()
+        button.textContent = rack[index].readStatus
+    }
 }
 
 function renderShelf() {
@@ -106,7 +111,9 @@ function renderShelf() {
         buttons.classList.add("buttons")
         const btn1 = document.createElement("button")
         btn1.textContent = book.readStatus
+        btn1.setAttribute("data-book-id", book.id)
         btn1.addEventListener("click", bookState)
+
         const btn2 = document.createElement("button")
         btn2.classList.add("remove")
         btn2.textContent = "REMOVE"
