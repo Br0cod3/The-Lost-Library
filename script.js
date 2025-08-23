@@ -3,6 +3,7 @@ let librarySection;
 const addBook = document.querySelector(".add-book")
 const cancel = document.querySelector(".cancel")
 const form = document.getElementById("side-form")
+const submit = document.querySelector(".submit")
 
 //SECTION ARRAYS
 const Grimoire = []
@@ -142,6 +143,10 @@ cancel.addEventListener("click", () => {
     form.classList.add("fade-out")
     form.classList.remove("fade-in")
     form.classList.add("hidden")
+})
+
+submit.addEventListener("click", (e) => {
+    e.preventDefault()
 })
 
 renderShelf()
