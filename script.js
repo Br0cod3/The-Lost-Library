@@ -81,8 +81,8 @@ function renderShelf() {
         const buttons = document.createElement("div")
         buttons.classList.add("buttons")
         const btn1 = document.createElement("button")
-        btn1.classList.add("read-status")
-        btn1.textContent = "READ"
+        // btn1.classList.add("read-status")
+        read.checked ? btn1.textContent = "READ" : btn1.textContent = "UNREAD"
         const btn2 = document.createElement("button")
         btn2.classList.add("remove")
         btn2.textContent = "REMOVE"
