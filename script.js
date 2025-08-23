@@ -82,6 +82,8 @@ function bookState(e) {
         rack[index].toggle()
         button.textContent = rack[index].readStatus
     }
+    button.className = ""
+    button.classList.add(rack[index].readStatus)
 }
 
 function renderShelf() {
@@ -111,6 +113,7 @@ function renderShelf() {
         buttons.classList.add("buttons")
         const btn1 = document.createElement("button")
         btn1.textContent = book.readStatus
+        btn1.classList.add(book.readStatus)
         btn1.setAttribute("data-book-id", book.id)
         btn1.addEventListener("click", bookState)
 
