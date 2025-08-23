@@ -1,6 +1,10 @@
 
 let librarySection;
+
+// BOOK SECTION
 const addBook = document.querySelector(".add-book")
+
+// FORM
 const cancel = document.querySelector(".cancel")
 const form = document.getElementById("side-form")
 const submit = document.querySelector(".submit")
