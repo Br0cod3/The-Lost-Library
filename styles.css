@@ -16,6 +16,7 @@
   --book-border: #f0f0f0;
   --book-background: rgba(215, 201, 201, 0.4);
   --label: rgba(0, 90, 255, 0.3);
+  --book-buttons: rgba(245, 245, 245, 0.7)
 }
 
 /*FONT-RULES*/
@@ -368,8 +369,8 @@ p[class^="section"]:hover {
   width: 6em;
   border-radius: 6px;
   border: none;
-  box-shadow: 0 0 4px #ffa500aa, 0 0 10px #ffb84daa, 0 0 20px #ff900033, 0 0 30px #ffae0055;
-  color: gray;
+  background-color: #003366;
+  color: var(--book-buttons);
   font-family: "Cinzel", "Garamond", "Georgia", sans-serif;
   font-weight: 600;
   cursor: pointer;
@@ -378,6 +379,16 @@ p[class^="section"]:hover {
 .book:hover {
   border: 2px solid var(--book-border);
   animation: floatUp 0.4s ease forwards;
+}
+
+button.READ {
+  background-color: #006400;
+  color: var(--book-buttons);
+}
+
+button.UNREAD {
+  background-color: #8B0000;
+  color: var(--book-buttons);
 }
 
 .buttons {
